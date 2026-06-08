@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cinzel", Georgia, serif;
+  --font-serif: "Cormorant Garamond", serif;
+  
+  --color-gold-light: #F5F2ED;
+  --color-gold-cream: #FCF6BA;
+  --color-gold: #D4AF37;
+  --color-gold-dark: #B69145;
+  --color-gold-deep: #2A2010;
+  
+  --color-velvet-dark: #000000;
+  --color-velvet-obsidian: #050505;
+  --color-velvet-burgund: #260A13;
+  --color-velvet-royal: #050E1A;
+}
+
+/* Base custom styles to ensure luxury typography and golden details */
+@layer base {
+  body {
+    @apply bg-velvet-obsidian text-[#F5F2ED] antialiased font-sans select-none overflow-x-hidden;
+    background-image: radial-gradient(circle at 50% -10%, #2A2010 0%, transparent 60%);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    @apply font-display tracking-wide;
+  }
+}
+
+/* Golden text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FBF5B7 0%, #FCF6BA 20%, #B38728 50%, #F1C40F 80%, #AA771C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Golden border gradient */
+.border-gold-gradient {
+  border-image: linear-gradient(135deg, #FCF6BA 0%, #BF953F 50%, #AA771C 100%) 1;
+}
+
+/* Soft gold glow hover utility */
+.hover-gold-glow:hover {
+  box-shadow: 0 0 20px rgba(191, 149, 63, 0.25);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Custom shimmering text effect */
+@keyframes gold-shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-gold-shimmer {
+  background: linear-gradient(90deg, #BF953F 25%, #FBF5B7 50%, #BF953F 75%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gold-shine 6s ease-in-out infinite;
+}
+
+/* Luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #AA771C, #12100E);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #BF953F;
+}
+
+/* Custom cards with radial gold shimmer overlay */
+.luxury-card {
+  background: rgba(5, 5, 5, 0.85);
+  @apply border border-gold/10 rounded-none backdrop-blur-xl relative overflow-hidden transition-all duration-500 hover:border-gold/35;
+}
+
+/* Immersive UI Luxury Buttons */
+.btn-primary-immersive {
+  @apply px-10 py-4 sm:px-12 sm:py-5 bg-gold text-black font-bold text-[13px] tracking-[0.25em] uppercase hover:bg-gold-dark transition-all duration-300 ring-1 ring-gold ring-offset-4 ring-offset-velvet-obsidian select-none cursor-pointer text-center inline-block;
+}
+
+.btn-secondary-immersive {
+  @apply px-10 py-4 sm:px-12 sm:py-5 bg-transparent text-[#F5F2ED] font-light text-[13px] tracking-[0.25em] uppercase hover:text-gold hover:border-gold border border-white/25 transition-all duration-300 select-none cursor-pointer text-center inline-block;
+}
+
+/* Decorative corner notches background helper */
+.luxury-notched {
+  @apply relative;
+}
+.notches-corner {
+  @apply absolute w-4 h-4 border-gold;
+}
+
+/* Watermark text */
+.watermark-prestige {
+  @apply text-[60px] md:text-[90px] font-display font-light leading-none text-gold/5 select-none pointer-events-none;
+}
+

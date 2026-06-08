@@ -1,0 +1,8 @@
+{
+  "name": "Remix: La Realeza",
+  "description": "Seu portal de eventos exclusivos de luxo. Viva uma experiência imersiva inesquecível com sofisticação, nobreza e detalhes em ouro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
